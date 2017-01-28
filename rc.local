@@ -28,7 +28,7 @@ date +%s >> /var/log/rc.log
 sleep 10s
 echo "waited 10 seconds" >> /var/log/rc.log
 date +%s >> /var/log/rc.log
-/usr/bin/mpc add http://audio.scdn.arkena.com/11008/franceinter-midfi128.mp3 >> /var/log/rc.log 2>&1 
+/usr/bin/mpc add http://aifae8cah8.lb.vip.cdn.dvmr.fr/franceinter-lofi.mp3 >> /var/log/rc.log 2>&1 
 date +%s >> /var/log/rc.log
 echo "invoked mpc add" >> /var/log/rc.log
 sleep 5s
