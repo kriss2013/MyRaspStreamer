@@ -12,4 +12,5 @@ Raspberry 3, as ist has WLAN support from the start
 ## solution with volumio 2
 - volumio -> http://volumio.org
 - install cron job in order to stop and restart the radio during the night
+
     apt-get update && apt-get install -y cron
