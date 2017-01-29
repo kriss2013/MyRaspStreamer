@@ -5,6 +5,6 @@ most simple streaming solution. Focus is on absolute ease of use.
 Raspberry 3, as ist has WLAN support from the start
 
 # Install 3rd party software
-- mopidy
-- mpc
+- mopidy -> streaming daemon
+- mpc -> command line client to configure mopidy
 - alsa-utils
