@@ -13,6 +13,15 @@ Raspberry 3, as ist has WLAN support from the start
 
 ## solution with volumio 2
 - volumio -> http://volumio.org. 2 users are created: root and volumio. Both with volumio as password. only volumio can login with ssh
+- use the volumio gui to put one radio stream in "My Web Radio" (was http://direct.franceinter.fr/live/franceinter-midfi.mp3)
+- put the radio in the playing queue (pull down menu on the right of the radio entry in "My Web Radio" -> "add to queue")
 - install cron job in order to stop and restart the radio during the night. All as root (using f.i. sudo)
 
     apt-get update && apt-get install -y cron
+    
+ - reboot in the night
+    
+        sudo crontab -e
+        0 3 * * * /sbin/init 6
+        
+  full path to init is necesary, otherwise the job will not run
