@@ -19,9 +19,10 @@ Raspberry 3, as ist has WLAN support from the start
 
     apt-get update && apt-get install -y cron
     
- - reboot in the night
+- reboot in the night
     
-        sudo crontab -e
-        0 3 * * * /sbin/init 6
+    sudo crontab -e
+    
+    0 3 * * * /sbin/init 6
         
   full path to init is necesary, otherwise the job will not run
