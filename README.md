@@ -20,4 +20,5 @@ Raspberry 3, as ist has WLAN support from the start
 - reboot in the night
     - sudo crontab -e
     - 0 3 * * * /sbin/init 6        
-full path to init is necesary, otherwise the job will not run
+full path to init is necessary, otherwise the job will not run
+- activate "GPIO Plugins" and set "Play/pause" as well as "next". "play/pause" could start and stop, but occassionaly "next" is necessary to allow the cycles to work
