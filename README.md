@@ -18,8 +18,7 @@ Raspberry 3, as ist has WLAN support from the start
     - download https://github.com/raspberrypi/firmware/raw/stable/boot/bcm2708-rpi-0-w.dtb on your PC/Mac/whatever
     - copy it in /boot partition of SD
 - use the volumio gui to put one radio stream in "My Web Radio" (was http://direct.franceinter.fr/live/franceinter-midfi.mp3)
-- Looks like Volumio2 does not enable NTP by default. it is necessary to access it with ssh
-    - timedatectl set-ntp true
+
 - put the radio in the playing queue (pull down menu on the right of the radio entry in "My Web Radio" -> "add to queue")
 - install cron job in order to stop and restart the radio during the night. All as root (using f.i. sudo)
     - apt-get update && apt-get install -y cron
@@ -28,3 +27,11 @@ Raspberry 3, as ist has WLAN support from the start
     - 0 3 * * * /sbin/init 6        
 full path to init is necessary, otherwise the job will not run
 - activate "GPIO Plugins" and set "Play/pause" as well as "next". "play/pause" could start and stop, but occassionaly "next" is necessary to allow the cycles to work
+
+for advanced work
+- Looks like Volumio2 does not enable NTP by default. it is necessary to access it with ssh
+    - timedatectl set-ntp true
+- volumio does not have a full set of package. it may be necessary to perform
+    - sudo apt-get update
+    in order to be able to install further packages like:
+    - sudo apt-get install vim
