@@ -37,3 +37,10 @@ for advanced work
     in order to be able to install further packages like:
   
   - sudo apt-get install vim
+- german keyboard
+    - sudo apt-get install locales
+    - sudo vim /etc/locale.gen
+
+    remove "#" before en_GB.UTF-8 UTF-8
+
+    - sudo locale-gen 
