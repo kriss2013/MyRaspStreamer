@@ -41,6 +41,9 @@ for advanced work
     - sudo apt-get install locales
     - sudo vim /etc/locale.gen
 
-    remove "#" before en_GB.UTF-8 UTF-8
+    remove "#" before de_DE.UTF-8 UTF-8
 
     - sudo locale-gen 
+    - sudo apt-get install keyboard-configuration
+    
+ none of the above works to change keyboard:-(
