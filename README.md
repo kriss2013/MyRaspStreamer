@@ -33,5 +33,7 @@ for advanced work
     - timedatectl set-ntp true
 - volumio does not have a full set of package. it may be necessary to perform
     - sudo apt-get update
+  
     in order to be able to install further packages like:
-    - sudo apt-get install vim
+  
+  - sudo apt-get install vim
