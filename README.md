@@ -47,3 +47,6 @@ for advanced work
     - sudo apt-get install keyboard-configuration
     
  none of the above works to change keyboard:-(
+ 
+ audio on pi zero
+ https://learn.adafruit.com/introducing-the-raspberry-pi-zero/audio-outputs
