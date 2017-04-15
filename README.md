@@ -50,3 +50,8 @@ for advanced work
  
  audio on pi zero
  https://learn.adafruit.com/introducing-the-raspberry-pi-zero/audio-outputs
+ 
+ to follow this instruction, one needs vcgencmd. it seems that this helps:
+    - sudo apt-get install binutils
+    
+    
