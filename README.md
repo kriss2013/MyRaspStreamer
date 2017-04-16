@@ -27,32 +27,6 @@ Raspberry 3, as ist has WLAN support from the start
     - 0 3 * * * /sbin/init 6        
 full path to init is necessary, otherwise the job will not run
 - activate "GPIO Plugins" and set "Play/pause" as well as "next". "play/pause" could start and stop, but occassionaly "next" is necessary to allow the cycles to work
-
-for advanced work
-- Looks like Volumio2 does not enable NTP by default. it is necessary to access it with ssh
-    - timedatectl set-ntp true
-- volumio does not have a full set of package. it may be necessary to perform
-    - sudo apt-get update
-  
-    in order to be able to install further packages like:
-  
-  - sudo apt-get install vim
-- german keyboard
-    - sudo apt-get install locales
-    - sudo vim /etc/locale.gen
-
-    remove "#" before de_DE.UTF-8 UTF-8
-
-    - sudo locale-gen 
-    - sudo apt-get install keyboard-configuration
-    
- none of the above works to change keyboard:-(
- 
- audio on pi zero
- https://learn.adafruit.com/introducing-the-raspberry-pi-zero/audio-outputs
- 
- to follow this instruction; https://www.raspberrypi.org/forums/viewtopic.php?f=91&t=86609, one needs vcgencmd. it seems that this helps:
- 
-    - sudo apt-get install binutils
     
     
+work in progress: http://www.evernote.com/l/AAOOIMLAR3xLzKeedLlRd9TiYAtharD1KZA/
