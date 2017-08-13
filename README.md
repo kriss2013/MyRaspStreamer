@@ -29,4 +29,4 @@ full path to init is necessary, otherwise the job will not run
 - activate "GPIO Plugins" and set "Play/pause" as well as "next". "play/pause" could start and stop, but occassionaly "next" is necessary to allow the cycles to work
     
     
-work in progress: http://www.evernote.com/l/AAOOIMLAR3xLzKeedLlRd9TiYAtharD1KZA/
+work in progress: https://docs.google.com/document/d/1TDSatWPPN96Mer0wqnUFBJojLpwfW_XxlmbxklHs84c/edit?usp=sharing
