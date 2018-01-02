@@ -6,7 +6,7 @@ Raspberry 3, as ist has WLAN support from the start
 ![Amplifier PAM 8403](PAM8403.jpg)
 ![DAC PCM5102 A](PCM5102a.jpg)
 
-# solution with volumio 2 (instructions valid for volumio-2.118-2017-03-07-pi)
+# solution with volumio 2 (instructions valid for volumio 2.348)
 - volumio -> http://volumio.org. 2 users are created: root and volumio. Both with volumio as password.
 - Select HIFIBerry DAC as output
 - 
