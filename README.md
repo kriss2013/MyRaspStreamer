@@ -2,7 +2,7 @@
 most simple streaming solution. Focus is on absolute ease of use.
 
 # Hardware
-Raspberry 3, as ist has WLAN support from the start
+Raspberry 3, as ist has WLAN support from the start  
 ![Amplifier PAM 8403](PAM8403.jpg)
 ![DAC PCM5102 A](PCM5102a.jpg)
 
