@@ -28,7 +28,10 @@ full path to init is necessary, otherwise the job will not run
 Install script above. Ths script is adapted from https://learn.adafruit.com/boomy-pi-airplay/software 
 Espeak is easyer than festival to play something through the softvolume device (in order to controll volume with software, as the DAC has no hardware controlled volume)
 Espeak works in french
-
+```bash
+sudo apt-get install python-pip python-gpiozero espeak
+sudo pip install pyalsaaudio
+```
 
     
     
