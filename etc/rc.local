@@ -11,31 +11,7 @@
 #
 # By default this script does nothing.
 
-#ifconfig eth0 down
-
-# Print the IP address
-_IP=$(hostname -I) || true
-if [ "$_IP" ]; then
-  printf "My IP address is %s\n" "$_IP" 
-fi
-
-date +%s > /var/log/rc.log
-sleep 45s
-/usr/bin/mopidy --save-debug-log > /var/log/mopidy_all.log 2>&1 &
-date +%s >> /var/log/rc.log
-echo "mopidy started" >> /var/log/rc.log
-date +%s >> /var/log/rc.log
-sleep 10s
-echo "waited 10 seconds" >> /var/log/rc.log
-date +%s >> /var/log/rc.log
-/usr/bin/mpc add http://aifae8cah8.lb.vip.cdn.dvmr.fr/franceinter-lofi.mp3 >> /var/log/rc.log 2>&1 
-date +%s >> /var/log/rc.log
-echo "invoked mpc add" >> /var/log/rc.log
-sleep 5s
-echo "waited 5 seconds" >> /var/log/rc.log
-date +%s >> /var/log/rc.log
-/usr/bin/mpc play 1 >> /var/log/mpc.log 2>&1 
-date +%s >> /var/log/rc.log
-echo "invoked mpc play 1" >> /var/log/rc.log
+sleep 100s
+python /home/volumio/control.py &
 
 exit 0
