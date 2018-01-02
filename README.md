@@ -3,6 +3,8 @@ most simple streaming solution. Focus is on absolute ease of use.
 
 # Hardware
 Raspberry 3, as ist has WLAN support from the start
+![Amplifier PAM 8403](PAM8403.jpg)
+![DAC PCM5102 A](PCM5102a.jpg)
 
 # Install 3rd party software
 
@@ -23,8 +25,10 @@ Raspberry 3, as ist has WLAN support from the start
 - install cron job in order to stop and restart the radio during the night. All as root (using f.i. sudo)
     - apt-get update && apt-get install -y cron
 - reboot in the night
-    - sudo crontab -e
-    - 0 3 * * * /sbin/init 6        
+```bash
+  sudo crontab -e
+  0 3 * * * /sbin/init 6        
+```
 full path to init is necessary, otherwise the job will not run
 - activate "GPIO Plugins" and set "Play/pause" as well as "next". "play/pause" could start and stop, but occassionaly "next" is necessary to allow the cycles to work
     
