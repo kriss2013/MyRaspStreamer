@@ -23,7 +23,9 @@ Raspberry 3, as ist has WLAN support from the start
 
 - put the radio in the playing queue (pull down menu on the right of the radio entry in "My Web Radio" -> "add to queue")
 - install cron job in order to stop and restart the radio during the night. All as root (using f.i. sudo)
-    - apt-get update && apt-get install -y cron
+``` bash
+apt-get update && apt-get install -y cron
+```
 - reboot in the night
 ```bash
   sudo crontab -e
