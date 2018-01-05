@@ -68,7 +68,12 @@ check, that the alsa layer has access to the speaker (through the DAC and the am
 ```
 speaker-test -Dplug:softvol -t wav -c 2
 ```
-the system should say "front right, front left" and loop indefinitely
-    
+the system should say "front right, front left" and loop indefinitely  
+
+The following command should show a line with "SoftMaster" as a control, possibly "numid=7,iface=MIXER,name='SoftMaster'"
+```
+amixer controls
+```
+if not may be the edit on /var/lib/alsa/asound.state was not successful?
     
 work in progress: https://docs.google.com/document/d/1TDSatWPPN96Mer0wqnUFBJojLpwfW_XxlmbxklHs84c/edit?usp=sharing
