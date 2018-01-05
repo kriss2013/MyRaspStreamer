@@ -25,13 +25,39 @@ full path to init is necessary, otherwise the job will not run
 - activate "GPIO Plugins" and set "Play/pause" (button 26) , volume + (button 6), Volume - (button 5)
 
 ## Optional, fun script
-Install script above. Ths script is adapted from https://learn.adafruit.com/boomy-pi-airplay/software 
+- Install script above. Ths script is adapted from https://learn.adafruit.com/boomy-pi-airplay/software 
 Espeak is easyer than festival to play something through the softvolume device (in order to controll volume with software, as the DAC has no hardware controlled volume)
 Espeak works in french
 ```bash
 sudo apt-get install python-pip python-gpiozero espeak
+sudo apt-get install libpython-dev
 sudo pip install pyalsaaudio
 ```
+- enable softmixer from alsa stack. Edit /var/lib/alsa/asound.state f.i. with nano
+```
+sudo nano /var/lib/alsa/asound.state
+```
+put a code like this one
+```
+      control.7 {
+                iface MIXER
+                name SoftMaster
+                value.0 34
+                value.1 34
+                comment {
+                        access 'read write user'
+                        type INTEGER
+                        count 2
+                        range '0 - 99'
+                        tlv '0000000100000008ffffec7800000032'
+                        dbmin -5000
+                        dbmax -50
+                        dbvalue.0 -3300
+                        dbvalue.1 -3300
+                }
+```
+at the appropriate place (clear once the file is edited)  
+**note:** The new volume control won't appear immediately! Only after the first usage of the newly defined device (e.g. with speaket-test command described below), should amixer controls | grep <control name> display your new control. more background info on the softmixer here: https://alsa.opensrc.org/Softvol and https://alsa.opensrc.org/How_to_use_softvol_to_control_the_master_volume
 
 ## some trouble shooting
 check, that the alsa layer has access to the speaker (through the DAC and the amplifier)
