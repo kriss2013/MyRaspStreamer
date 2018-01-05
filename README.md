@@ -33,6 +33,12 @@ sudo apt-get install python-pip python-gpiozero espeak
 sudo pip install pyalsaaudio
 ```
 
+## some trouble shooting
+check, that the alsa layer has access to the speaker (through the DAC and the amplifier)
+```
+speaker-test -Dplug:softvol -t wav -c 2
+```
+the system should say "front right, front left" and loop indefinitely
     
     
 work in progress: https://docs.google.com/document/d/1TDSatWPPN96Mer0wqnUFBJojLpwfW_XxlmbxklHs84c/edit?usp=sharing
