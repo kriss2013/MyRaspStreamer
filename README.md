@@ -57,6 +57,10 @@ put a code like this one
                 }
 ```
 at the appropriate place (clear once the file is edited)  
+one edited tha changes must be loaded ba alsa
+```
+sudo alsactl restore
+```
 **note:** The new volume control won't appear immediately! Only after the first usage of the newly defined device (e.g. with speaket-test command described below), should amixer controls | grep <control name> display your new control. more background info on the softmixer here: https://alsa.opensrc.org/Softvol and https://alsa.opensrc.org/How_to_use_softvol_to_control_the_master_volume
 
 ## some trouble shooting
