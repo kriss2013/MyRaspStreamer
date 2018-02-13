@@ -15,8 +15,8 @@ RPi Zero does not give easy access to PWM pins. Using a cheap pHat DAC doe conve
 ## USB Power plug
 Because the RPi USB Socket is not easily accessible in the small case [AliExpress Link to the USB Plug](https://www.aliexpress.com/item/10pcs-MICRO-USB-to-DIP-Adapter-5pin-Female-Connector-B-Type-PCB-Converter/32720363831.html) 
 
-
-# solution with volumio 2 (instructions valid for volumio 2.348)
+# Software
+## solution with volumio 2 (instructions valid for volumio 2.348)
 - volumio -> http://volumio.org. 2 users are created: root and volumio. Both with volumio as password.
 - Select HIFIBerry DAC as output
 - use the volumio gui to put one radio stream in "My Web Radio" (was http://direct.franceinter.fr/live/franceinter-midfi.mp3)
