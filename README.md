@@ -75,5 +75,3 @@ The following command should show a line with "SoftMaster" as a control, possibl
 amixer controls
 ```
 if not may be the edit on /var/lib/alsa/asound.state was not successful?
-    
-work in progress: https://docs.google.com/document/d/1TDSatWPPN96Mer0wqnUFBJojLpwfW_XxlmbxklHs84c/edit?usp=sharing
