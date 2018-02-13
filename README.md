@@ -33,6 +33,7 @@ Because the RPi USB Socket is not easily accessible in the small case [AliExpres
 ## solution with volumio 2 (instructions valid for volumio 2.348)
 - volumio -> http://volumio.org. 2 users are created: root and volumio. Both with volumio as password.
 - Select HIFIBerry DAC as output
+- Set the "Mixer" to "Software defined", otherwise it is not possible to control the volume and the DAC output always the maximum volume. Apparently one should wait 10 minutes and reboot in oder do see the softvolume control appearing in settings
 - use the volumio gui to put one radio stream in "My Web Radio" (was http://direct.franceinter.fr/live/franceinter-midfi.mp3)
 - put the radio in the playing queue (pull down menu on the right of the radio entry in "My Web Radio" -> "add to queue")
 - Enable SSH on volumio (local.IP/dev then click enable)
