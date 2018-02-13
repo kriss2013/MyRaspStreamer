@@ -96,5 +96,5 @@ espeak -vfr 'Box Ok' --stdout | aplay -Dsoftvol
 changing keyboard layout fo french
 ```
 sudo apt-get install console-data
-loadkey fr
+loadkeys fr
 ```
