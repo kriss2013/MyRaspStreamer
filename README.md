@@ -11,6 +11,20 @@ after several tries I found that the PAM8403 ist strong enough an works well wit
 ## DAC
 ![DAC PCM5102 A](PCM5102a.jpg)
 
+|PCM5102a|Func|RPi 0 Pin|GPIO|Func|
+|--------|--------|--------|--------|--------|
+|VCC|Not connected|--|--|--|
+|3.3 V|3.3 V|1|X|3.3V|
+|GND|GND|39|X|GND|
+|FLT|GND|--|--|--|
+|DMP|GND|--|--|--|
+|SCL|SCL|5|GPIO3|SCL1 I2C|
+|BCK|BCK|12|GPIO18|PCM_CLK|
+|DIN|Data|40|GPIO21|??|
+|LCK|LCK|35|GPIO19|??|
+|FMT|GND|--|--|--|
+|XMT|3.3V|--|--|--|
+
 RPi Zero does not give easy access to PWM pins. Using a cheap pHat DAC doe convert to analog signal is a good way as the audio quality is also better as with PWM. this DAC can be easily configured to mimic the HIFIBerry DAC [AliExpress Link to the DAC](https://de.aliexpress.com/item/Raspberry-Pi-pHAT-Sound-Card-I2S-interface-PCM5102-DAC-Module-24-bit-Audio-Board-With-Stereo/32744871341.html)
 ## USB Power plug
 Because the RPi USB Socket is not easily accessible in the small case [AliExpress Link to the USB Plug](https://www.aliexpress.com/item/10pcs-MICRO-USB-to-DIP-Adapter-5pin-Female-Connector-B-Type-PCB-Converter/32720363831.html) 
