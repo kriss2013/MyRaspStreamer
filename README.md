@@ -33,6 +33,21 @@ sudo apt-get install python-pip python-gpiozero espeak
 sudo apt-get install libpython-dev
 sudo pip install pyalsaaudio
 ```
+
+## some trouble shooting
+
+check, that the alsa layer has access to the speaker (through the DAC and the amplifier)
+```
+speaker-test -Dplug:softvol -t wav -c 2
+```
+the system should say "front right, front left" and loop indefinitely  
+
+The following command should show a line with "SoftMaster" as a control, possibly "numid=7,iface=MIXER,name='SoftMaster'"
+```
+amixer controls
+```
+if not may be the edit on /var/lib/alsa/asound.state was not successful?
+
 - enable softmixer from alsa stack. Edit /var/lib/alsa/asound.state f.i. with nano
 ```
 sudo nano /var/lib/alsa/asound.state
@@ -63,15 +78,5 @@ sudo alsactl restore
 ```
 **note:** The new volume control won't appear immediately! Only after the first usage of the newly defined device (e.g. with speaket-test command described below), should amixer controls | grep <control name> display your new control. more background info on the softmixer here: https://alsa.opensrc.org/Softvol and https://alsa.opensrc.org/How_to_use_softvol_to_control_the_master_volume
 
-## some trouble shooting
-check, that the alsa layer has access to the speaker (through the DAC and the amplifier)
-```
-speaker-test -Dplug:softvol -t wav -c 2
-```
-the system should say "front right, front left" and loop indefinitely  
 
-The following command should show a line with "SoftMaster" as a control, possibly "numid=7,iface=MIXER,name='SoftMaster'"
-```
-amixer controls
-```
-if not may be the edit on /var/lib/alsa/asound.state was not successful?
+
