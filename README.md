@@ -46,7 +46,6 @@ sudo pip install pyalsaaudio
 [fun script] (home/volumio/control.py)
 
 ## some trouble shooting
-
 check, that the alsa layer has access to the speaker (through the DAC and the amplifier)
 ```
 speaker-test -Dplug:softvol -t wav -c 2
@@ -89,5 +88,13 @@ sudo alsactl restore
 ```
 **note:** The new volume control won't appear immediately! Only after the first usage of the newly defined device (e.g. with speaket-test command described below), should amixer controls | grep <control name> display your new control. more background info on the softmixer here: https://alsa.opensrc.org/Softvol and https://alsa.opensrc.org/How_to_use_softvol_to_control_the_master_volume
 
+check, that espeak works correctly (french for me;-)
+```
+espeak -vfr 'Box Ok' --stdout | aplay -Dsoftvol
+```
 
-
+changing keyboard layout fo french
+```
+sudo apt-get install console-data
+loadkey fr
+```
