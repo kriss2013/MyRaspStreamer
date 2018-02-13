@@ -2,9 +2,19 @@
 most simple streaming solution. Focus is on absolute ease of use.
 
 # Hardware
-Raspberry 3, as ist has WLAN support from the start  
+Raspberry Zero W, as ist has WLAN support from the start and is small enough to fit in a handy casing
+## Amplifier
 ![Amplifier PAM 8403](PAM8403.jpg)
+
+after several tries I found that the PAM8403 ist strong enough an works well with 5 volts [EBay link to the ampifier](http://www.ebay.de/itm/Super-Mini-PAM8403-Digitaler-Verstärker-Platine-D-Digitalverstärker-Bord-B98B/)
+
+## DAC
 ![DAC PCM5102 A](PCM5102a.jpg)
+
+RPi Zero does not give easy access to PWM pins. Using a cheap pHat DAC doe convert to analog signal is a good way as the audio quality is also better as with PWM. this DAC can be easily configured to mimic the HIFIBerry DAC [AliExpress Link to the DAC](https://de.aliexpress.com/item/Raspberry-Pi-pHAT-Sound-Card-I2S-interface-PCM5102-DAC-Module-24-bit-Audio-Board-With-Stereo/32744871341.html)
+## USB Power plug
+Because the RPi USB Socket is not easily accessible in the small case [AliExpress Link to the USB Plug](https://www.aliexpress.com/item/10pcs-MICRO-USB-to-DIP-Adapter-5pin-Female-Connector-B-Type-PCB-Converter/32720363831.html) 
+
 
 # solution with volumio 2 (instructions valid for volumio 2.348)
 - volumio -> http://volumio.org. 2 users are created: root and volumio. Both with volumio as password.
@@ -33,6 +43,7 @@ sudo apt-get install python-pip python-gpiozero espeak
 sudo apt-get install libpython-dev
 sudo pip install pyalsaaudio
 ```
+[fun script] (home/volumio/control.py)
 
 ## some trouble shooting
 
