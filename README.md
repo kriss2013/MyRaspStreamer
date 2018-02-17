@@ -107,9 +107,3 @@ check, that espeak works correctly (french for me;-)
 ```
 espeak -vfr 'Box Ok' --stdout | aplay -Dsoftvol
 ```
-
-changing keyboard layout fo french
-```
-sudo apt-get install console-data
-loadkeys fr
-```
