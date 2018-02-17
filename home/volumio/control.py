@@ -22,7 +22,7 @@ status = j['status']
 volume_left, volume_right = mixer.getvolume()
 print("Volume: L: %d%%    R: %d%%" % (volume_left, volume_right))
 os.system("volumio volume 35")
-os.system("espeak -vfr 'Lalie Box Ok' --stdout | aplay -Dsoftvol")
+os.system("/usr/bin/espeak -vfr 'la Dinou Box est prête a être utilisée' -s 140 --stdout | aplay -Dsoftvol")
 
 def mute():
   global volume_left, volume_right, muted, status
@@ -35,7 +35,7 @@ def mute():
   if status=='stop':
     print("start playing")
     muted = False
-    os.system("espeak -vfr 'mise en marche' --stdout | aplay -Dsoftvol")
+    os.system("espeak -vfr 'démarrage de la radio' --stdout | aplay -Dsoftvol")
     os.system("volumio play")
     # mixer.setvolume(volume_left, 0)
     # mixer.setvolume(volume_right, 1)
@@ -43,7 +43,7 @@ def mute():
     print("stop playing")
     muted = True
     os.system("volumio stop")
-    os.system("espeak -vfr 'stop' --stdout | aplay -Dsoftvol")
+    os.system("espeak -vfr 'la radio a été arrétée' --stdout | aplay -Dsoftvol")
     # mixer.setvolume(0, 0)
     # mixer.setvolume(0, 1)
 
