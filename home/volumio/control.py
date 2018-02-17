@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # sudo apt-get install python-pip python-gpiozero espeak
 # sudo apt-get install libpython-dev
 # sudo pip install pyalsaaudio
