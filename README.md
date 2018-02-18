@@ -55,9 +55,8 @@ full path to init is necessary, otherwise the job will not run
 sudo update-locale LANG="C.UTF-8"
 ```
 after that close the shell and start another one in  order for the changes to take effect. Check that it works by typing `` `e `` should give è
-- Install script above. This script is adapted from https://learn.adafruit.com/boomy-pi-airplay/software 
-Espeak is easyer than festival to play something through the softvolume device (in order to controll volume with software, as the DAC has no hardware controlled volume)
-Espeak works in french
+- Install [this script](/home/volumio/control.py) adapted from https://learn.adafruit.com/boomy-pi-airplay/software)  
+Espeak is easyer than festival to play something through the softvolume device in order to controll volume with software, as the DAC has no hardware controlled volume. Moreover Espeak works in french
 ```bash
 sudo apt-get install python-pip python-gpiozero espeak
 sudo apt-get install libpython-dev
