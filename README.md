@@ -50,7 +50,12 @@ full path to init is necessary, otherwise the job will not run
 - activate "GPIO Plugins" and set "Play/pause" (button 26) , volume + (button 6), Volume - (button 5)
 
 ## Optional, fun script
-- Install script above. Ths script is adapted from https://learn.adafruit.com/boomy-pi-airplay/software 
+- prepare the system for french
+```
+sudo update-locale LANG="C.UTF-8"
+```
+after that close the shell and start another one in  order for the changes to take effect. Check that it works by typing `` `e `` should give è
+- Install script above. This script is adapted from https://learn.adafruit.com/boomy-pi-airplay/software 
 Espeak is easyer than festival to play something through the softvolume device (in order to controll volume with software, as the DAC has no hardware controlled volume)
 Espeak works in french
 ```bash
