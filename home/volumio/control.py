@@ -45,7 +45,7 @@ def mute():
     print("stop playing")
     muted = True
     os.system("volumio stop")
-    os.system("espeak -vfr -s 150 'la radio vient d'être arrêtée' --stdout | aplay -Dsoftvol")
+    os.system("espeak -vfr -s 150 'la radio vient d''être arrêtée' --stdout | aplay -Dsoftvol")
     # mixer.setvolume(0, 0)
     # mixer.setvolume(0, 1)
 
