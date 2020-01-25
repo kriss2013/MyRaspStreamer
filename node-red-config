@@ -1,0 +1,244 @@
+[
+    {
+        "id": "2d87aedc.8ccb72",
+        "type": "tab",
+        "label": "alexa - radio control",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a96fb090.8944e",
+        "type": "alexa-home",
+        "z": "2d87aedc.8ccb72",
+        "conf": "7362b133.2b92",
+        "device": "52313",
+        "acknoledge": true,
+        "name": "Radio",
+        "topic": "",
+        "x": 210,
+        "y": 540,
+        "wires": [
+            [
+                "60be2b02.4a5b64"
+            ]
+        ]
+    },
+    {
+        "id": "a7270e38.7641e",
+        "type": "volumio command",
+        "z": "2d87aedc.8ccb72",
+        "server": "a93759ea.54af88",
+        "x": 610,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "289fe8ef.8670e8",
+        "type": "inject",
+        "z": "2d87aedc.8ccb72",
+        "name": "Start Volumio radio",
+        "topic": "",
+        "payload": "{\"event\":\"play\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 60,
+        "wires": [
+            [
+                "a7270e38.7641e"
+            ]
+        ]
+    },
+    {
+        "id": "9f8e7a8f.3f58c8",
+        "type": "inject",
+        "z": "2d87aedc.8ccb72",
+        "name": "Stop volumio radio",
+        "topic": "",
+        "payload": "{\"event\":\"pause\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 100,
+        "wires": [
+            [
+                "a7270e38.7641e"
+            ]
+        ]
+    },
+    {
+        "id": "60be2b02.4a5b64",
+        "type": "switch",
+        "z": "2d87aedc.8ccb72",
+        "name": "",
+        "property": "command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "TurnOnRequest",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "TurnOffRequest",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "SetPercentageRequest",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 150,
+        "y": 360,
+        "wires": [
+            [
+                "c3542b30.db4c88"
+            ],
+            [
+                "db5a0fd0.55fde"
+            ],
+            [
+                "eb8de28.479e42"
+            ]
+        ]
+    },
+    {
+        "id": "c3542b30.db4c88",
+        "type": "change",
+        "z": "2d87aedc.8ccb72",
+        "name": "Einschalten",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"event\":\"play\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "a7270e38.7641e"
+            ]
+        ]
+    },
+    {
+        "id": "db5a0fd0.55fde",
+        "type": "change",
+        "z": "2d87aedc.8ccb72",
+        "name": "Ausschalten",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"event\":\"pause\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 360,
+        "wires": [
+            [
+                "a7270e38.7641e"
+            ]
+        ]
+    },
+    {
+        "id": "6ca679e8.18c908",
+        "type": "inject",
+        "z": "2d87aedc.8ccb72",
+        "name": "volumio volume faible",
+        "topic": "",
+        "payload": "{\"event\":\"volume\",\"data\":20}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "a7270e38.7641e"
+            ]
+        ]
+    },
+    {
+        "id": "835c348c.cf1098",
+        "type": "inject",
+        "z": "2d87aedc.8ccb72",
+        "name": "volumio volume normal",
+        "topic": "",
+        "payload": "{\"event\":\"volume\",\"data\":40}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "a7270e38.7641e"
+            ]
+        ]
+    },
+    {
+        "id": "eb8de28.479e42",
+        "type": "template",
+        "z": "2d87aedc.8ccb72",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"event\": \"volume\",\n    \"data\": {{payload}}\n}",
+        "output": "json",
+        "x": 340,
+        "y": 420,
+        "wires": [
+            [
+                "a7270e38.7641e"
+            ]
+        ]
+    },
+    {
+        "id": "7362b133.2b92",
+        "type": "alexa-home-conf",
+        "z": "",
+        "username": "kriss"
+    },
+    {
+        "id": "a93759ea.54af88",
+        "type": "volumio-server",
+        "z": "",
+        "host": "192.168.178.88",
+        "port": "3000"
+    }
+]
