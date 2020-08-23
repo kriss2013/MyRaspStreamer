@@ -1,8 +1,10 @@
 # MyRaspStreamer
 most simple streaming solution. Focus is on absolute ease of use.
+![WLAN Radio](DSC_0589.jpg)
 
 # Hardware
 Raspberry Zero W, as ist has WLAN support from the start and is small enough to fit in a handy casing
+![inside layout](DSC_0586.jpg)
 ## Amplifier
 ![Amplifier PAM 8403](PAM8403.jpg)
 
